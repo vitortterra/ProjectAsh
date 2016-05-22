@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+{% block content %}
+   <div class="about">
+     <!--<h1>Questão</h1>-->
+     <p> {{entries[0]}} </p>
+     <p>Agora responda corretamente a questão a seguir:</p>
+     <p> {{entries[1]}} </p>
+     <form action="/result" method="post">
+ 		<input type="radio" name="alternative" value="a"> {{entries[2]}} </input> <br><br>
+ 		<input type="radio" name="alternative" value="b"> {{entries[3]}} </input> <br><br>
+ 		<input type="radio" name="alternative" value="c"> {{entries[4]}} </input> <br><br>
+ 		<input type="radio" name="alternative" value="d"> {{entries[5]}} </input> <br><br>
+     	<input type="radio" name="alternative" value="e"> {{entries[6]}} </input> <br><br>
+     	<input type="hidden" name = "correctAlternative" value="{{entries[7]}}">
+     	<input type="hidden" name = "quizID" value="{{entries[8]}}">
+     	<input type="hidden" name = "themeID" value="{{entries[9]}}">
+ 		<input type="submit" value="Enviar resposta">
+     </form>
+   </div>
+ {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+    <h1> {{entries[0]}}</h1>
+    <p>	{{entries[1]}}</p> 
+    {% for themeID, themeName in entries[2]%}
+    	<form action="/lesson" method = "post">
+    		<input type="hidden" name = "themeID" value="{{themeID}}">
+    		<input type="submit" name = "themeName" value="{{themeName}}">
+		</form>
+    	<br> <br>
+    {% endfor %}
+  </div>
+{% endblock %}
